@@ -21,7 +21,7 @@ Created using CSS, HTML, and Javascript.
 
 ## Preview 
 
-[Preview of password generator](./assets/preview.png)
+![Preview of password generator](./assets/preview.png)
 
 ## Credits
 
