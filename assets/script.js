@@ -12,14 +12,22 @@ var spec = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.'
 var charBank = [];
 var passwordArray = [];
 
-  let passLength = prompt('Please enter a number between 8 and 128', 'Enter number here');
+  let passLength = prompt('Please enter a number between 8 and 128');
 
-  if (isNaN(passLength) || passLength == null || passLength == '' || passLength < 8 || passLength > 128) { //ADD CHECK FOR WHITEPSACE <8 || >128
+  if (passLength === null) {
 
+    return passwordArray = 'Try again'
+    
+  }
+
+  if (isNaN(passLength) || passLength == '' || passLength < 8 || passLength > 128) { //ADD CHECK FOR WHITEPSACE
+
+    console.log(passLength)
     alert('I said enter a number between 8 and 128 stupid idiot')
     return generatePassword()
+    
 
-  };
+  } 
   
   var lowerCase = confirm('Lower Case?');
 
