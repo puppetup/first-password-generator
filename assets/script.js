@@ -1,17 +1,23 @@
-
+// QUESTION FOR TUTOR
 // When character arrays were declared OUTSIDE of gen pass function the charBank would populate with certain arrays even if confirm returned false. 
 //For instance if i chose no lower case, no upper case, yes numbers, yes specials - the character array would still populate with lowercase letters - why? 
 //This stopped when I moved the arrays into the scope of the gen pass function
 
+// function to create password
 function generatePassword() {
 
+// variables containing all possible characters
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var spec = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~']
+
+// empty arrays to store characters and password in
 var charBank = [];
 var passwordArray = [];
 
+
+// user must choose length of password
   let passLength = prompt('Please enter a number between 8 and 128');
 
   if (passLength === null) {
@@ -29,6 +35,7 @@ var passwordArray = [];
 
   } 
   
+  // user must decide on types of characters to include in the password
   var lowerCase = confirm('Lower Case?');
 
   console.log(lowerCase)
@@ -52,6 +59,8 @@ var passwordArray = [];
 
   };
   
+
+  // include confirmed character types
   if (lowerCase){
 
     charBank = charBank.concat(lower)
@@ -85,6 +94,7 @@ var passwordArray = [];
   console.log(charBank)
   console.log(passLength)
 
+  // randomly select characters from character bank
   for (let i = 0; i < passLength; i++) {
 
     let passValue = Math.floor(Math.random() * charBank.length);
@@ -94,6 +104,7 @@ var passwordArray = [];
 
   }
 
+  // return array as string
   return passwordArray.join('');
   
 }
